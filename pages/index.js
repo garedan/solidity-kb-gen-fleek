@@ -52,17 +52,17 @@ export default function Home() {
   useEffect(addContractEventHandlers, [!!keyboardsContract, connectedAccount]);
 
   if (!ethereum) {
-    return <p>Please install MetaMask to connect to this site</p>
+    return <p>Por favor, instale MetaMask para conectarse a este sitio</p>
   }
   
     if (!connectedAccount) {
-      return <PrimaryButton onClick={connectAccount}>Connect MetaMask Wallet</PrimaryButton>
+      return <PrimaryButton onClick={connectAccount}>Conecte la billetera MetaMask</PrimaryButton>
     }
   
     if (keyboards.length > 0) {
       return (
         <div className="flex flex-col gap-4">
-          <PrimaryButton type="link" href="/create">Create a Keyboard!</PrimaryButton>
+          <PrimaryButton type="link" href="/create">¡Crear un teclado!</PrimaryButton>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2 p-2">
           {keyboards.map(
             ([kind, isPBT, filter, owner], i) => (
@@ -85,8 +85,8 @@ export default function Home() {
     if (keyboardsLoading) {
       return (
         <div className="flex flex-col gap-4">
-          <PrimaryButton type="link" href="/create">Create a Keyboard!</PrimaryButton>
-          <p>Loading Keyboards...</p>
+          <PrimaryButton type="link" href="/create">¡Crear un teclado!</PrimaryButton>
+          <p>Cargando Teclados...</p>
         </div>
       )
     }
@@ -94,8 +94,8 @@ export default function Home() {
     // No keyboards yet
     return (
       <div className="flex flex-col gap-4">
-        <PrimaryButton type="link" href="/create">Create a Keyboard!</PrimaryButton>
-        <p>No keyboards yet!</p>
+        <PrimaryButton type="link" href="/create">¡Crear un teclado!</PrimaryButton>
+        <p>¡Todavía no hay teclados!</p>
       </div>
     )
 }

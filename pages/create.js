@@ -82,11 +82,11 @@ export default function Create() {
   }
 
   if (!ethereum) {
-    return <p>Please install MetaMask to connect to this site</p>
+    return <p>Por favor, instale MetaMask para conectarse a este sitio</p>
   }
 
   if (!connectedAccount) {
-    return <PrimaryButton onClick={connectAccount}>Connect MetaMask Wallet</PrimaryButton>
+    return <PrimaryButton onClick={connectAccount}>Conecte la billetera MetaMask</PrimaryButton>
   }
 
   return (
@@ -94,7 +94,7 @@ export default function Create() {
       <form className="mt-8 flex flex-col gap-y-6">
         <div>
           <label htmlFor="keyboard-type" className="block text-sm font-medium text-gray-700">
-            Keyboard Type
+            Tipo de teclado
           </label>
           <select
             id="keyboard-type"
@@ -112,7 +112,7 @@ export default function Create() {
 
         <div>
           <label htmlFor="keycap-type" className="block text-sm font-medium text-gray-700">
-            Keycap Type
+            Tipo de tecla
           </label>
           <select
             id="keycap-type"
@@ -128,7 +128,7 @@ export default function Create() {
 
         <div>
           <label htmlFor="filter" className="block text-sm font-medium text-gray-700">
-            Filter
+            Filtro
           </label>
           <select
             id="filter"
@@ -137,7 +137,7 @@ export default function Create() {
             onChange={(e) => { setFilter(e.target.value) }}
             value={filter}
           >
-            <option value="">None</option>
+            <option value="">Ninguno</option>
             <option value="sepia">Sepia</option>
             <option value="grayscale">Grayscale</option>
             <option value="invert">Invert</option>
@@ -147,11 +147,11 @@ export default function Create() {
         </div>
 
         <PrimaryButton type="submit" disabled={mining} onClick={submitCreate}>
-            {mining ? "Creating..." : "Create Keyboard"}
+            {mining ? "Creando..." : "Crear un teclado"}
         </PrimaryButton>
       </form>
       <div>
-        <h2 className="block text-lg font-medium text-gray-700">Preview</h2>
+        <h2 className="block text-lg font-medium text-gray-700">Vista previa</h2>
         <Keyboard kind={keyboardKind} isPBT={isPBT} filter={filter} />
     </div>
     </div>
